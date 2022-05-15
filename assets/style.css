@@ -1,73 +1,55 @@
-*{
-    box-sizing: border-box;
+:root{
+    --main-bg-img: url("https://kaboompics.com/cache/2/b/7/e/e/2b7eece56e8c1523c9518fce73d7f5118a4010a3.jpeg");
 }
-
-.container{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
+ 
+body{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;
 }
-
-
-
-.card{
-    position: relative;
-    cursor: pointer;
+ 
+ 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: var(--main-bg-img);
+  background-size: cover;
+  background-position: center;
 }
-
-.container .card .part_form{
-    width: 300px;
-    height: 200px;
-    transition: 1s;
-    border: 1px solid black;
+ 
+* {
+  box-sizing: border-box;
 }
-
-.container .card .part_form.part1{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    background-color: gray;
-    transform: translateY(100px);
+ 
+.glass {
+  height: inherit;
+  width: inherit;
+  background-image: var(--main-bg-img);
+  background-size: cover;
+  background-position: center;
+  clip-path: inset(10em);
+  filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.container .card:hover .part_form.part1{
-    background-color: red;
-    transform: translateY(0);
+ 
+.shadow {
+  height: 100%;
+  width: 100%;
+  filter:  drop-shadow(0px 10px 10px rgba(0, 0, 0, 1));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.container .card .part_form.part1 .content{
-    opacity: 0.5;
-    transition: 1s;
-}
-
-.container .card:hover .part_form.part1 .content{
-    opacity: 1;
-}
-
-.container .card .part_form.part2{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    transform: translateY(-100px);
-}
-.container .card:hover .part_form.part2{
-
-    transform: translateY(0);
-}
-
-.container .card .part_form.part2 .content a{
-    text-decoration: none;
-    padding: 10px;
-    border: 1px solid black;
-    display: inline-block;
-    margin: 10px 0 0;
-}
-
-.content img {
-    max-height: 200px;
-    max-width: 300px;
-}
+   
+.shadow span {
+    position: absolute;
+    z-index:2;
+    color: white;
+    font-size: 50px;
+    padding-left: 10px;
+    letter-spacing: 2em;
+  }
