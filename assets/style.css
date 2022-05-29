@@ -1,63 +1,33 @@
-/*
-свойства
-количество строк и столбцов
-grid-template-rows
-grid-template-columns
-grid-template - обобщенное
-
-200px 200px 100px 
-repeat(3, 200px)
-
-repeat(3, 200px) / repeat(3, 100px)
-
-30% 20% 50%
-repeat(3, 30%)
-
-1fr 1fr 1fr
-
-расстояние или поля
-grid-column-gap
-grid-row-gap
-gap обобщенное
-
-расположение элементов
-grid-column-start, grid-column-end
-grid-row-start, grid-column-end
-
-grid-column обобщенные
-grid-row обобщенное
-
-обобщенное свойсво по располежению элементов
-grid-area: start-row / start-col / end-row / end-col
-
-*/
-
-.item2{
-  grid-area: 2 / 2 / 4/ 4;
-  background-color: blue;
-}
-
-.item12{
-  grid-area: 1 / 2 / 5 / 5;
-  opacity: 0.5;
-  z-index: 2;
-}
-
-
 body{
   display: grid;
-  margin: 0;
+  grid: 150px 1fr 100px / 1fr 5fr 1fr;
+  grid-template-areas: 
+  'header header header'
+  'leftNav content aside'
+  'footer footer footer';
 }
 
-.container{
-  display: grid;
-  border: 2px solid black;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  gap: 20px;
- 
+header{
+  background: orange;
+  grid-area: header;
 }
 
-.item{
+footer{
+  background: blue;
+  grid-area: footer;
+}
+
+main{
   background: gray;
-  margin: 10px;
+  grid-area: content;
+}
+
+nav.leftNav{
+  background-color: brown;
+  grid-area: leftNav;
+}
+
+aside{
+  background-color: beige;
+  grid-area: aside;
 }
