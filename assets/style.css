@@ -1,55 +1,63 @@
-:root{
-    --main-bg-img: url("https://kaboompics.com/cache/2/b/7/e/e/2b7eece56e8c1523c9518fce73d7f5118a4010a3.jpeg");
+/*
+свойства
+количество строк и столбцов
+grid-template-rows
+grid-template-columns
+grid-template - обобщенное
+
+200px 200px 100px 
+repeat(3, 200px)
+
+repeat(3, 200px) / repeat(3, 100px)
+
+30% 20% 50%
+repeat(3, 30%)
+
+1fr 1fr 1fr
+
+расстояние или поля
+grid-column-gap
+grid-row-gap
+gap обобщенное
+
+расположение элементов
+grid-column-start, grid-column-end
+grid-row-start, grid-column-end
+
+grid-column обобщенные
+grid-row обобщенное
+
+обобщенное свойсво по располежению элементов
+grid-area: start-row / start-col / end-row / end-col
+
+*/
+
+.item2{
+  grid-area: 2 / 2 / 4/ 4;
+  background-color: blue;
 }
- 
+
+.item12{
+  grid-area: 1 / 2 / 5 / 5;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+
 body{
-  height: 100vh;
+  display: grid;
   margin: 0;
-  padding: 0;
-  background-color: lightblue;
 }
+
+.container{
+  display: grid;
+  border: 2px solid black;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 20px;
  
- 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: var(--main-bg-img);
-  background-size: cover;
-  background-position: center;
 }
- 
-* {
-  box-sizing: border-box;
+
+.item{
+  background: gray;
+  margin: 10px;
 }
- 
-.glass {
-  height: inherit;
-  width: inherit;
-  background-image: var(--main-bg-img);
-  background-size: cover;
-  background-position: center;
-  clip-path: inset(10em);
-  filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
- 
-.shadow {
-  height: 100%;
-  width: 100%;
-  filter:  drop-shadow(0px 10px 10px rgba(0, 0, 0, 1));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-   
-.shadow span {
-    position: absolute;
-    z-index:2;
-    color: white;
-    font-size: 50px;
-    padding-left: 10px;
-    letter-spacing: 2em;
-  }
